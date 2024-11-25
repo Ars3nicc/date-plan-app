@@ -16,15 +16,15 @@ function HomePage() {
 
   return (
     <main className="flex flex-col justify-center items-center min-h-screen relative">
-      <div className="flex justify-center items-center">
+      <div className="">
         <img src={hamsterIMG} alt="Hamster Meme" className="w-[250px] pb-8" />
       </div>
-      {/* <h1 className="text-center text-5xl font-extrabold text-rose-800">
+      <h1 className="text-center text-5xl font-extrabold text-rose-800">
         Will you go out on a date with me?
-      </h1> */}
+      </h1>
       <div className="py-16">
         <Link to="/happy-page">
-          <button className="bg-rose-800 text-white px-16 py-4 rounded mr-4 transition duration-300 ease-in-out transform hover:bg-rose-600 hover:scale-105">
+          <button className="bg-rose-800 text-white text-xl font-bold px-16 py-4 rounded mr-4 transition duration-300 ease-in-out transform hover:bg-rose-600 hover:scale-105">
             Yes
           </button>
         </Link>

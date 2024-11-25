@@ -1,0 +1,27 @@
+.glow {
+  box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7);
+}
+
+.food-selection {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.food-item {
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.food-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.food-item.active {
+  border-color: #00f;
+  box-shadow: 0 0 10px #00f;
+}
