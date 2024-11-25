@@ -1,16 +1,50 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
 
 function Index() {
   const [excitement, setExcitement] = useState(5);
 
   return (
-    <div className="flex flex-col items-center p-4">
-      <h2 className="text-xl mb-4">Rate your excitement</h2>
+    <div className="py-4 flex flex-col justify-center items-center min-h-screen relative">
+      <img src="https://i.chzbgr.com/full/9442666752/hEE1C0E84/cat" alt="excited cat" className='w-[250px]'/>
+      <h2 className="text-5xl font-extrabold mb-8 text-rose-800">Rate your excitement</h2>
 
-      <span className="text-lg">Excitement Level: {excitement}</span>
+      <span className="text-lg mb-2">Excitement Level: <b className='text-rose-800 text-xl'>{excitement}</b></span>
+
+      <input
+        type="range"
+        min="1"
+        max="10"
+        value={excitement}
+        onChange={(e) => setExcitement(e.target.value)}
+        className="w-full max-w-md h-2 bg-rose-800 rounded-lg appearance-none cursor-pointer mb-4"
+        style={{ WebkitAppearance: 'none', appearance: 'none' }}
+      />
+
+      <style jsx>{`
+        input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #4a5568;
+          cursor: pointer;
+        }
+        input[type='range']::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #4a5568;
+          cursor: pointer;
+        }
+      `}</style>
+
+      <div className="flex justify-between w-full max-w-md">
+        <span className="text-xl font-bold text-rose-800">1</span>
+        <span className="text-xl font-bold text-rose-800">10</span>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Index
+export default Index;
