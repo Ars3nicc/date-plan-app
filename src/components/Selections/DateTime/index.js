@@ -8,8 +8,27 @@ function Index() {
     setSelectedDate(e.target.value);
   };
 
+  const sendEmail = async (date) => {
+    try {
+      await fetch("https://your-email-api-endpoint.com/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          to: "franzmanrique2121@gmail.com",
+          subject: "Selected Date",
+          text: `The selected date is: ${date}`,
+        }),
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
   const handleButtonClick = () => {
     localStorage.setItem("selectedDate", selectedDate);
+    sendEmail(selectedDate);
   };
 
   return (
@@ -30,11 +49,10 @@ function Index() {
       <div className="py-9">
         <Link to="/select-food">
           <button
-            className="bg-rose-800 text-white py-3 px-16 rounded-full flex items-center hover:bg-rose-700"
+            className="text-red font-bold rounded-full hover:before:bg-redborder-rose-800 relative h-[50px] w-80 overflow-hidden border-1 border-rose-800 bg-white text-rose-800 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-rose-800 before:transition-all before:duration-500 hover:text-white hover:shadow-rose-800 hover:before:left-0 hover:before:w-full"
             onClick={handleButtonClick}
           >
-            Set the Date!
-            <i className="bx bx-right-arrow-alt text-lg ml-3"></i>
+            <span className="relative z-10">Set the Date! (＾-＾)</span>
           </button>
         </Link>
       </div>

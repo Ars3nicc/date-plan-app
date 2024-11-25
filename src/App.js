@@ -6,6 +6,7 @@ import DateTime from './components/Selections/DateTime';
 import FoodSelection from './components/Selections/Foods';
 import DateTypeSelection from './components/Selections/DateType';
 import RateExcitement from './components/Selections/RateExcitement';
+import PostMessage from './components/PostMessage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/select-food" element={<FoodSelection />} />
       <Route path="/select-date-type" element={<DateTypeSelection />} />
       <Route path="/rate-excitement" element={<RateExcitement />} />
+      <Route path="/post-message" element={<PostMessage />} />
       
     </Routes>
   );

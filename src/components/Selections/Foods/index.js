@@ -63,9 +63,8 @@ const FoodSelection = () => {
             state: { ...previousData, selectedFood },
           }}
         >
-          <button className="bg-rose-800 text-white py-3 px-16 rounded-full flex items-center hover:bg-rose-700">
-            Got it :)
-            <i className="bx bx-right-arrow-alt text-lg ml-3"></i>
+          <button className="text-red font-bold rounded-full hover:before:bg-redborder-rose-800 relative h-[50px] w-80 overflow-hidden border-1 border-rose-800 bg-white text-rose-800 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-rose-800 before:transition-all before:duration-500 hover:text-white hover:shadow-rose-800 hover:before:left-0 hover:before:w-full">
+            <span className="relative z-10">Got it! :)</span>
           </button>
         </Link>
       </div>
